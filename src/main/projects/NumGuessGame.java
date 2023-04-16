@@ -1,5 +1,11 @@
 package main.projects;
 
+/*
+ * Write a java program to make a number guessing game where computer generates a random number two
+ * numbers which the user enters and user gets limited chances as they desire to guess the number.
+ * Guide the user by printing if the number they entered is smaller or greater than the original number.
+*/
+
 import java.util.Scanner;
 import java.util.Random;
 
