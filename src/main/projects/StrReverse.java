@@ -14,7 +14,7 @@ public class StrReverse {
     String inp = sc.nextLine();
     sc.close();
     String out = "";
-    for (int i = inp.length() - 1; i >= 0; i--) {
+    for (int i = inp.length()- 1; i >= 0; i--) {
       out += inp.charAt(i);
     }
     System.out.println(out);

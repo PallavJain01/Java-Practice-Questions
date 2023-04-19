@@ -9,7 +9,7 @@ public class Main {
     NumGuessGame nGG = new NumGuessGame();
 
     /*
-     * strRev.main(String);
+     * strRev.main();
     
      * nGG.main();
 
