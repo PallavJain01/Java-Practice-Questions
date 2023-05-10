@@ -13,7 +13,7 @@ public class NumGuessGame {
   Scanner sc = new Scanner(System.in);
   Random rd = new Random();
 
-  public void main() {
+  public void start() {
 
     System.out.println("Enter minimum value");
     int min = sc.nextInt();
