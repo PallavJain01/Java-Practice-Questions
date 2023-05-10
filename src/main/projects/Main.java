@@ -1,22 +1,14 @@
 package main.projects;
-import main.projects.*;
+
+// import main.projects.*;
 
 public class Main {
   public static void main(String[] args) {
 
     Calculator calc = new Calculator();
-    StrReverse strRev = new StrReverse();
-    NumGuessGame nGG = new NumGuessGame();
+    StrReverse strRev = new StrReverse(); // strRev(String)
+    NumGuessGame nGG = new NumGuessGame(); // nGG.start();
+    RockPaperScissors RPS = new RockPaperScissors(); // RPS.start();
 
-    /*
-     * strRev.main();
-    
-     * nGG.main();
-
-     * calc.add(int/float, int/float);
-     * calc.sub(int/float, int/float);
-     * calc.prod(int/float, int/float);
-     * calc.div(int/float, int/float);
-     */
   }
 }
