@@ -1,33 +1,29 @@
 package main.projects;
 
-/**
- * A Calculator to perform basic mathematical calculations.
-*/
-
 public class Calculator {
   public float add(float a, float b) {
-    /**
+    /*
      * Add two numbers
      */
     return a + b;
   }
 
   public float sub(float a, float b) {
-    /**
+    /*
      * Subtract two numbers
      */
     return a - b;
   }
 
   public float prod(float a, float b) {
-    /**
+    /*
      * Multiply two numbers
      */
     return a * b;
   }
 
   public float div(float a, float b) {
-    /**
+    /*
      * Divide two numbers
      */
     if (b != 0) {
@@ -38,7 +34,7 @@ public class Calculator {
   }
 
   public float remainder(float a, float b) {
-    /**
+    /*
      * Get remainder by dividing two numbers
      */
     if (b != 0) {
@@ -49,7 +45,7 @@ public class Calculator {
   }
 
   public int greatestInt(float num) {
-    /**
+    /*
      * Greatest Integer function
      */
     if (num > 0) {
@@ -62,7 +58,7 @@ public class Calculator {
   }
 
   public int power(int num, int power) {
-    /**
+    /*
      * Raise a number to a power (num^power)
      */
     int n = num;
@@ -73,7 +69,7 @@ public class Calculator {
   }
 
   public int sqrt(int num) {
-    /**
+    /*
      * Square root of a number
      */
     return (int) Math.sqrt((double) num);
@@ -81,7 +77,7 @@ public class Calculator {
   }
 
   public float reciprocal(float num) {
-    /**
+    /*
      * Reciprocal of a number (1 / num)
      */
     return (1 / num);
