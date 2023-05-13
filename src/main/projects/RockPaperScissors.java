@@ -9,7 +9,7 @@ public class RockPaperScissors {
 		Scanner sc = new Scanner(System.in);
 
 		String msg = "0:ROCK | 1:PAPER | 2:SCISSORS";
-		String[] choices = new String[] { "ROCK", "PAPER", "SCISSORS" };
+		String[] choices = { "ROCK", "PAPER", "SCISSORS" };
 
 		System.out.print("Enter number of chances: ");
 		int NumChances = sc.nextInt();
