@@ -1,3 +1,11 @@
+:warning: at some places you may see variable declarations like
+```java
+ int a = 10, b = 4, c = 14;
+```
+If you are a beginner at java, this is just an alternative way to declare multiple same type variables while needing to specify type only once. more reference at [w3schools.com](https://www.w3schools.com/java/java_variables_multiple.asp)
+
+---
+
 1. Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order. 
 Expected Output:
 Original Array:
