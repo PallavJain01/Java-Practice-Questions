@@ -48,12 +48,24 @@ class Solutions {
 
     String out = "";
 
-    if (a == b) { out = a + " == " + b + "\n"; }
-    if (a != b) { out = a + " != " + b + "\n"; }
-    if (a < b)  { out = a + " < " + b + "\n"; }
-    if (a <= b) { out = a + " <= " + b + "\n"; }
-    if (a > b)  { out = a + " > " + b + "\n"; }
-    if (a >= b) { out = a + " >= " + b + "\n"; }
+    if (a == b) {
+      out = a + " == " + b + "\n";
+    }
+    if (a != b) {
+      out = a + " != " + b + "\n";
+    }
+    if (a < b) {
+      out = a + " < " + b + "\n";
+    }
+    if (a <= b) {
+      out = a + " <= " + b + "\n";
+    }
+    if (a > b) {
+      out = a + " > " + b + "\n";
+    }
+    if (a >= b) {
+      out = a + " >= " + b + "\n";
+    }
     return out;
   }
 
@@ -92,7 +104,8 @@ class Solutions {
         others = s.length() - (letters + spaces + digits);
       }
     }
-    String out = "length: " + s.length() + "\nletters: " + letters + "\nspaces: " + spaces + "\ndigits: " + digits + "\nothers: " + others;
+    String out = String.format("length: %d\nletters: %d\nspaces: %d\ndigits: %d\nothers: %d", s.length(), letters,
+        spaces, digits, others);
     return out;
   }
 
@@ -127,7 +140,7 @@ class Solutions {
 
   public String nToOneByOperations(int n) {
     /*
-     * Java program start with an integer n, divide n by 2 if n is even or multiply
+     * start with an integer n, divide n by 2 if n is even or multiply
      * by 3 and add 1 if n is odd, repeat the process until n = 1.
      */
     String out = "";
@@ -142,24 +155,20 @@ class Solutions {
     return out;
   }
 
-  public void numNames(int n) {
+  public String numNames(int n) {
     /*
      * Input a number from the user and display the sum of digits.
      * Also display the user with each digit of the entered number converted into
      * english words.
      */
-
-    String[] numNames = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
-
+    String[] numNames = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" },
+        digits = Integer.toString(n).split("");
     String name = "";
-    String[] digits = Integer.toString(n).split("");
-
-    System.out.printf("Sum: %d\n", sumDigits(n));
 
     for (String a : digits) {
-      name = numNames[Integer.parseInt(a)];
-      System.out.printf("%s ", name);
+      name += " " + numNames[Integer.parseInt(a)];
     }
+    return name;
   }
 
   public String countEvenAndOddElements(int[] n) {
@@ -177,34 +186,33 @@ class Solutions {
     return "evens: " + even + "odds: " + odd;
   }
 
-  public void elemSideToSide(int[] n) {
+  public String elemSideToSide(int[] n) {
     /*
      * Test if an array of integers contains an element 10 next to 10 or an element
      * 20 next to 20, but not both.
      */
-    int prev = 0;
-    int current = 0;
-    boolean detect_10 = false;
-    boolean detect_20 = false;
+    int prev = 0, current = 0;
+    boolean detect_10 = false, detect_20 = false;
+    String out = "";
 
     for (int i = 1; i < n.length; i++) {
       prev = n[i - 1];
       current = n[i];
 
-      boolean cond1 = (prev == 10) && (current == 10);
-      boolean cond2 = (prev == 20) && (current == 20);
+      boolean cond1 = (prev == 10) && (current == 10),
+          cond2 = (prev == 20) && (current == 20);
 
       if (cond1) {
-        System.out.printf("\n10 side to side detected at index %d and %d\n", i - 1, i);
+        out += String.format("\n10 side to side detected at index %d and %d\n", i - 1, i);
         detect_10 = true;
       } else if (cond2) {
-        System.out.printf("\n20 side to side detected at index %d and %d\n", i - 1, i);
+        out += String.format("\n20 side to side detected at index %d and %d\n", i - 1, i);
         detect_20 = true;
       }
     }
     if (detect_10 && detect_20) {
       System.out.println("\n10 and 20 both detected side to side");
     }
+    return out;
   }
-
 }
