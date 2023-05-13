@@ -1,4 +1,4 @@
-package main.exercises;
+package main.java.exercises;
 
 import java.util.ArrayList;
 import java.util.Random;

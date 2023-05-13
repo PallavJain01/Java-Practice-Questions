@@ -1,4 +1,4 @@
-package main.projects;
+package main.java.projects;
 
 public class Calculator {
   public float add(float a, float b) {
