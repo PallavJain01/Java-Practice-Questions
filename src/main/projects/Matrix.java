@@ -1,14 +1,5 @@
 package main.projects;
 
-public class Matrix {
-
-  public static void main(String[] args) {
-    MatrixCalculator mtrxCalc = new MatrixCalculator();
-    int[][] test = { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 1, 3 } };
-    System.out.println((mtrxCalc.inverse(test)));
-  }
-}
-
 class MatrixCalculator {
 
   public String matrixToString(int[][] matrix) {
