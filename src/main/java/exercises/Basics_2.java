@@ -30,12 +30,12 @@ class Solutions {
      * Get 4 integers as input from user and check if they are equal or not.
      * Print equal or not equal based on the result.
      */
-    boolean c1 = (a == b);
-    boolean c2 = (a == c);
-    boolean c3 = (a == d);
-    boolean c4 = (b == c);
-    boolean c5 = (b == d);
-    boolean c6 = (c == d);
+    boolean c1 = (a == b)
+    , c2 = (a == c)
+    , c3 = (a == d)
+    , c4 = (b == c)
+    , c5 = (b == d)
+    , c6 = (c == d);
 
     if (c1 && c2 && c3 && c4 && c5 && c6) {
       return "Numbers are equal";
@@ -81,14 +81,14 @@ class Solutions {
      * In the given array, move every negative number to the left and positive
      * number to the right and sort them accordingly.
      */
-    ArrayList<Integer> neg = new ArrayList<>();
-    ArrayList<Integer> pos = new ArrayList<>();
-    ArrayList<Integer> out = new ArrayList<>();
+    ArrayList<Integer> neg = new ArrayList<>()
+    , pos = new ArrayList<>()
+    , out = new ArrayList<>();
+    
 
     for (int n : arr) {
       if (n < 0) {
         neg.add(n);
-        ;
       } else if (n >= 0) {
         pos.add(n);
       }
@@ -133,13 +133,13 @@ class Solutions {
     return a;
   }
 
-  public String revSentence(String str_words) {
+  public String revSentence(String sentence) {
     /*
      * reverse the content of a sentence (words seperated by space)
      * Example: hello world! -> world! hello
      */
-    String[] arr_words = str_words.split(" ");
-    String[] arr_words_rev = new String[arr_words.length];
+    String[] arr_words = sentence.split(" ")
+    , arr_words_rev = new String[arr_words.length];
 
     String str_words_rev = "";
 
@@ -158,8 +158,9 @@ class Solutions {
      * find the length of the longest consecutive sequence of a given array of
      * integers.
      */
-    int count = 1;
-    int longestCount = 1;
+    int count = 1
+    , longestCount = 1;
+
     for (int i = 1; i < a.length; i++) {
       if ((a[i] - a[i - 1]) == 1) {
         count++;
@@ -170,13 +171,8 @@ class Solutions {
         longestCount = count;
       }
     }
-    switch (longestCount) {
-      case 1:
-        return longestCount;
-      default:
-        return longestCount + 1;
-    }
-
+    if (longestCount == 1 ) {return 1;}
+    else { return longestCount + 1;}
   }
 
   public boolean subStr(String subStr, String main) {
@@ -184,22 +180,6 @@ class Solutions {
      * accept two string and test if the second string contains the first one.
      */
     return main.contains(subStr);
-  }
-
-  public int getSmlIntegers(int[] main, int[] second) {
-    /*
-     * get the number of element in a given array of integers that are smaller than
-     * the integer of another given array of integers.
-     */
-    int out = 0;
-    for (int a : main) {
-      for (int b : second) {
-        if (a < b) {
-          out++;
-        }
-      }
-    }
-    return out;
   }
 
   public int[] medianArr(int[] arr, int k) {
@@ -250,9 +230,9 @@ class Solutions {
      * second.
      */
 
-    ArrayList<Integer> sum_arr = new ArrayList<>();
-    ArrayList<Integer> evens = new ArrayList<>();
-    ArrayList<Integer> odds = new ArrayList<>();
+    ArrayList<Integer> sum_arr = new ArrayList<>()
+    , evens = new ArrayList<>()
+    , odds = new ArrayList<>();
 
     for (int i = 0; i < arr.length; i++) {
       if (arr[i] % 2 == 0) {
