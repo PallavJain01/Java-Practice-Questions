@@ -1,4 +1,4 @@
-## Repository created to store the practice questions i have done while learning java
+## Repository created to store the practice questions/projects I have done while learning java
 
 ### Projects are from [columbia.edu](https://bootcamp.cvn.columbia.edu/blog/java-projects-for-beginners-to-gain-skills/)
 ### Exercises are from [w3resource.com](https://www.w3resource.com/java-exercises)
