@@ -1,44 +1,35 @@
 package main.exercises;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-class Basics_2 {
-  public static void main(String[] args) {
-    Solutions sol = new Solutions();
-    int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 8};
-    sol.medianArr(arr);
-  }
-}
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 class Solutions {
 
   Scanner sc = new Scanner(System.in);
   Random rd = new Random();
 
-  public ArrayList<Integer> largestThreeNums(ArrayList<Integer> n) {
+  public ArrayList<Integer> largestKNumbers(ArrayList<Integer> n, int k) {
     /*
-     * Return the largest three numbers of an array.
+     * Return the largest k numbers of an array.
      */
     n.sort(null);
     ArrayList<Integer> out = new ArrayList<>();
 
-    for (int i = n.size() - 1; i > n.size() - 4; i--) {
+    for (int i = n.size() - 1; i > n.size() - k - 1; i--) {
       out.add(n.get(i));
     }
     return out;
   }
 
-  public void equalOrNot() {
+  public String equalOrNot(int a, int b, int c, int d) {
     /*
      * Get 4 integers as input from user and check if they are equal or not.
      * Print equal or not equal based on the result.
      */
-    int a = sc.nextInt();
-    int b = sc.nextInt();
-    int c = sc.nextInt();
-    int d = sc.nextInt();
     boolean c1 = (a == b);
     boolean c2 = (a == c);
     boolean c3 = (a == d);
@@ -47,10 +38,28 @@ class Solutions {
     boolean c6 = (c == d);
 
     if (c1 && c2 && c3 && c4 && c5 && c6) {
-      System.out.println("Numbers are equal");
+      return "Numbers are equal";
     } else {
-      System.out.println("numbers are not equal");
+      return "numbers are not equal";
     }
+  }
+
+  public char[][] booleanArrToCharArr(boolean[][] boolArr) {
+    /*
+     * Convert the contents of a boolean array to a character array
+     * true -> t; false -> f
+     */
+    char[][] out = new char[boolArr.length][boolArr[0].length];
+    for (int i = 0; i < boolArr.length; i++) {
+      for (int j = 0; j < boolArr[i].length; j++) {
+        if (boolArr[i][j] == true) {
+          out[i][j] = 't';
+        } else if (boolArr[i][j] == false) {
+          out[i][j] = 'f';
+        }
+      }
+    }
+    return out;
   }
 
   public int[][] changeRowAndColumn(int[][] arr) {
@@ -193,12 +202,68 @@ class Solutions {
     return out;
   }
 
-  public void medianArr(int[] arr) {
+  public int[] medianArr(int[] arr, int k) {
     /*
      * find the median of the number inside the window (size k) at each moving in a
      * given array of integers with duplicate numbers. Move the window from the
      * start of the array.
-     */ 
-    // TODO
+     */
+    int[] out = new int[arr.length - k + 1];
+    Arrays.sort(arr);
+    for (int i = 0; i < arr.length - k + 1; i++) {
+      for (int winSize = 0; winSize < k; winSize++) {
+        if (k % 2 == 1) {
+          out[i] = arr[i + (k + 1) / 2 - 1];
+        } else if (k % 2 == 0) {
+          out[i] = (arr[i + (k / 2) - 1] + arr[i + (k / 2)]) / 2;
+        }
+      }
+    }
+    return out;
+  }
+
+  public int[] maxNumArr(int[] arr, int k) {
+    /*
+     * Find the maximum number inside the number in the window (size k) at each
+     * moving in a given array of integers with duplicate numbers. Move the window
+     * from the start of the array.
+     */
+    int[] out = new int[arr.length - k + 1];
+    Arrays.sort(arr);
+    for (int i = 0; i < arr.length - k + 1; i++) {
+      out[i] = arr[i + k - 1];
+    }
+    return out;
+  }
+
+  public LinkedList<Integer> deleteNode(LinkedList<Integer> linkLst, int nodeIndex) {
+    /*
+     * delete a specified node in the middle of a singly linked list.
+     */
+    linkLst.remove(nodeIndex);
+    return linkLst;
+  }
+
+  public int[] partitionArray(int[] arr) {
+    /*
+     * partition an given array of integers into even number first and odd number
+     * second.
+     */
+
+    ArrayList<Integer> sum_arr = new ArrayList<>();
+    ArrayList<Integer> evens = new ArrayList<>();
+    ArrayList<Integer> odds = new ArrayList<>();
+
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 == 0) {
+        evens.add(arr[i]);
+      } else if (arr[i] % 2 == 1) {
+        odds.add(arr[i]);
+      }
+    }
+    sum_arr.addAll(0, evens);
+    sum_arr.addAll(sum_arr.size(), odds);
+    int[] out = sum_arr.stream().mapToInt(i -> i).toArray();
+    return out;
   }
 }

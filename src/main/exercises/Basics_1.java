@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Basics_1 {
-
-  public static void main(String[] args) {
-    
-  }
-}
-
 class Solutions {
 
   Scanner sc = new Scanner(System.in);
@@ -47,30 +40,21 @@ class Solutions {
     return out;
   }
 
-  public void compareNumbers(int a, int b) {
+  public String compareNumbers(int a, int b) {
     /*
      * Compare two numbers and print the result
      * using: [ ==, !=, <, <=, >, >= ]
      */
 
-    if (a == b) {
-      System.out.printf("%d == %d\n", a, b);
-    }
-    if (a != b) {
-      System.out.printf("%d != %d\n", a, b);
-    }
-    if (a < b) {
-      System.out.printf("%d <  %d\n", a, b);
-    }
-    if (a <= b) {
-      System.out.printf("%d <= %d\n", a, b);
-    }
-    if (a > b) {
-      System.out.printf("%d >  %d\n", a, b);
-    }
-    if (a >= b) {
-      System.out.printf("%d >= %d\n", a, b);
-    }
+    String out = "";
+
+    if (a == b) { out = a + " == " + b + "\n"; }
+    if (a != b) { out = a + " != " + b + "\n"; }
+    if (a < b)  { out = a + " < " + b + "\n"; }
+    if (a <= b) { out = a + " <= " + b + "\n"; }
+    if (a > b)  { out = a + " > " + b + "\n"; }
+    if (a >= b) { out = a + " >= " + b + "\n"; }
+    return out;
   }
 
   public int sumDigits(int n) {
@@ -87,7 +71,7 @@ class Solutions {
     return sum;
   }
 
-  public void countChars(String s) {
+  public String countChars(String s) {
     /*
      * count the letters, spaces, numbers and other characters of an input string.
      */
@@ -108,11 +92,11 @@ class Solutions {
         others = s.length() - (letters + spaces + digits);
       }
     }
-    System.out.printf("length: %d \nletters: %d \nspaces: %d \ndigits: %d \nothers: %d\n",
-        s.length(), letters, spaces, digits, others);
+    String out = "length: " + s.length() + "\nletters: " + letters + "\nspaces: " + spaces + "\ndigits: " + digits + "\nothers: " + others;
+    return out;
   }
 
-  public void threeDigitNums() {
+  public ArrayList<Integer> threeDigitNums() {
     /*
      * create and display unique three-digit number using 1, 2, 3, 4; and count how
      * many three-digit numbers are there.
@@ -128,8 +112,7 @@ class Solutions {
         }
       }
     }
-    System.out.println(nums);
-    System.out.println(nums.size());
+    return nums;
   }
 
   public int sumMultipleDigit(int n) {
@@ -142,20 +125,21 @@ class Solutions {
     return out;
   }
 
-  public void nToOneByOperations(int n) {
+  public String nToOneByOperations(int n) {
     /*
      * Java program start with an integer n, divide n by 2 if n is even or multiply
      * by 3 and add 1 if n is odd, repeat the process until n = 1.
      */
+    String out = "";
     while (n != 1) {
       if (n % 2 == 0) {
         n /= 2;
       } else if (n % 2 == 1) {
         n = (n * 3) + 1;
       }
-      System.out.println(n);
-      continue;
+      out += n + "\n";
     }
+    return out;
   }
 
   public void numNames(int n) {
