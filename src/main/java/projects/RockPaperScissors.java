@@ -14,15 +14,29 @@ public class RockPaperScissors {
 		System.out.print("Enter number of chances: ");
 		int NumChances = sc.nextInt();
 
+		String resultFormat = 
+"""
+\u001B[36m---------------------------------------
+\u001B[32mScores:
+  \u001B[34mUser: \u001B[32m%d
+  \u001B[34mComputer: \u001B[32m%d
+  \u001B[34mTies: \u001B[32m%d
+
+\u001B[34mResult:
+  \u001B[32m%s
+\u001B[36m---------------------------------------
+\u001B[37m
+""";
+
 		System.out.println(msg + "\n");
 
-		int scoreComputer = 0;
-		int scoreUser = 0;
-		int Ties = 0;
+		int scoreComputer = 0
+		, scoreUser = 0
+		, Ties = 0;
 
-		for (int i = 0; i < NumChances; i++) {
-			int choiceComputer = rd.nextInt(0, 3);
-			int choiceUser = sc.nextInt();
+		for (int i = 0; i++ < NumChances;) {
+			int choiceComputer = rd.nextInt(0, 3)
+			, choiceUser = sc.nextInt();
 			if (choiceComputer == choiceUser) {
 				choiceComputer = rd.nextInt(0, 3);
 			}
@@ -32,8 +46,8 @@ public class RockPaperScissors {
 				i--;
 				continue;
 			}
-			System.out.println("You chose: " + choices[choiceUser]);
-			System.out.println("Computer chose: " + choices[choiceComputer]);
+			System.out.println("\u001B[33mYou chose: " + choices[choiceUser] + "\u001B[37m");
+			System.out.println("\u001B[33mComputer chose: " + choices[choiceComputer] + "\u001B[37m");
 
 			boolean winUser = (choiceComputer == 0 && choiceUser == 2) ||
 					(choiceComputer == 1 && choiceUser == 0) ||
@@ -45,25 +59,26 @@ public class RockPaperScissors {
 
 			if (winUser) {
 				scoreUser++;
-				System.out.println("User Won!\n");
+				System.out.println("\u001B[35mUser Won!\u001B[37m\n");
 			} else if (winComputer) {
 				scoreComputer++;
-				System.out.println("Computer Won!\n");
+				System.out.println("\u001B[35mComputer Won!\u001B[37m\n");
 			} else if (!(winUser || winComputer)) {
 				Ties++;
-				System.out.println("Its a Tie!\n");
+				System.out.println("\u001B[35mIts a Tie!\u001B[37m\n");
 			}
 		}
 		sc.close();
 
-		System.out.printf("\nUser: %d\nComputer: %d\nTies: %d\n", scoreUser, scoreComputer, Ties);
+		String winResult = "";
 
 		if (scoreUser > scoreComputer) {
-			System.out.println("\nUser won the game!");
+			winResult = "User Won the Game";
 		} else if (scoreComputer > scoreUser) {
-			System.out.println("\nComputer won the game!");
+			winResult = "Computer Won the Game";
 		} else if (scoreUser == scoreComputer) {
-			System.out.println("\nThe game was a tie!");
+			winResult = "The game was a tie";
 		}
+		System.out.println(String.format(resultFormat, scoreUser, scoreComputer, Ties, winResult));
 	}
 }
