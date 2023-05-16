@@ -12,8 +12,8 @@ public class NumGuessGame {
     System.out.println("Enter minimum value");
     int min = sc.nextInt();
     System.out.println("Enter maximum value");
-    int max = sc.nextInt()
-    , num = rd.nextInt(min, max);
+    int max = sc.nextInt();
+    int num = rd.nextInt(min, max);
 
     System.out.println("Enter number of chances: ");
     int chances = sc.nextInt();
