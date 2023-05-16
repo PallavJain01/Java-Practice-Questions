@@ -1,7 +1,5 @@
 package main.java.projects;
 
-import main.projects.*;
-
 public class Main {
   public static void main(String[] args) {
 
