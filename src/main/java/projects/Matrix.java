@@ -54,20 +54,21 @@ class MatrixCalculator {
   public int[][] transpose_3x3(int[][] matrix) {
     /*
      * returns the transpose of a 3x3 matrix
-     */
-    int temp = matrix[0][1];
-    matrix[0][1] = matrix[1][0];
-    matrix[1][0] = temp;
+     */;
+    int[][] out = matrix;
+    int temp = 0;
+    temp = out[0][1];
+    out[0][1] = out[1][0];
+    out[1][0] = temp;
 
-    temp = matrix[0][2];
-    matrix[0][2] = matrix[2][0];
-    matrix[2][0] = temp;
+    temp = out[0][2];
+    out[0][2] = out[2][0];
+    out[2][0] = temp;
 
-    temp = matrix[1][2];
-    matrix[1][2] = matrix[2][1];
-    matrix[2][1] = temp;
-
-    return matrix;
+    temp = out[1][2];
+    out[1][2] = out[2][1];
+    out[2][1] = temp;
+    return out;
 
   }
 
@@ -155,7 +156,7 @@ class MatrixCalculator {
     String inverse = "[";
     for (int i = 0; i < cofactor(matrix).length; i++) {
       for (int j = 0; j < cofactor(matrix)[i].length; j++) {
-        inverse += " " + cofactor(matrix)[i][j] + "/" +  determinant_3x3(matrix) + " ";
+        inverse += " " + cofactor(matrix)[i][j] + "/" + determinant_3x3(matrix) + " ";
       }
       inverse += "]\n[";
     }
