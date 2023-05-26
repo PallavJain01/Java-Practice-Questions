@@ -105,6 +105,18 @@ class MatrixCalculator {
     return product;
   }
 
+  public int[][] multiplyScalar(int[][] matrix, int scalar) {
+    /*
+     * returns the matrix multiplied by a scalar(integer)
+     */
+    for (int i = 0; i++ < matrix.length;){
+      for(int j = 0; j++ < matrix[i].length;) {
+        matrix[i][j] *= scalar;
+      }
+    }
+    return matrix;
+  }
+
   public static int[][] minor(int[][] matrix, int row, int column) {
     int[][] minor = new int[matrix.length][matrix[0].length];
     int Index_row = 0;
