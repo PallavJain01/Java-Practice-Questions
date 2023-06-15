@@ -6,10 +6,16 @@ import java.util.Scanner;
 
 class Solutions {
 
+  public static void main(String[] args) {
+    int i = 10, j = 12, k = 1;
+    k += i++ - --j;
+    System.out.println(k);
+}
+
   Scanner sc = new Scanner(System.in);
   Random rd = new Random();
 
-  public int decimalToBinary(int n) {
+  public static int decimalToBinary(int n) {
     /*
      * Convert decimal numbers into binary
      */
@@ -25,7 +31,7 @@ class Solutions {
     return Integer.parseInt(res);
   }
 
-  public int BinaryToDecimal(int a) {
+  public static int BinaryToDecimal(int a) {
     /*
      * Convert Binary numbers into decimal
      */
@@ -40,7 +46,7 @@ class Solutions {
     return out;
   }
 
-  public String compareNumbers(int a, int b) {
+  public static String compareNumbers(int a, int b) {
     /*
      * Compare two numbers and print the result
      * using: [ ==, !=, <, <=, >, >= ]
@@ -69,7 +75,7 @@ class Solutions {
     return out;
   }
 
-  public int sumDigits(int n) {
+  public static int sumDigits(int n) {
     /*
      * compute the sum of the digits of an integer.
      */
@@ -83,7 +89,7 @@ class Solutions {
     return sum;
   }
 
-  public String countChars(String s) {
+  public static String countChars(String s) {
     /*
      * count the letters, spaces, numbers and other characters of an input string.
      */
@@ -109,7 +115,7 @@ class Solutions {
     return out;
   }
 
-  public ArrayList<Integer> threeDigitNums() {
+  public static ArrayList<Integer> threeDigitNums() {
     /*
      * create and display unique three-digit number using 1, 2, 3, 4; and count how
      * many three-digit numbers are there.
@@ -128,7 +134,7 @@ class Solutions {
     return nums;
   }
 
-  public int sumMultipleDigit(int n) {
+  public static int sumMultipleDigit(int n) {
     /*
      * Accept an integer (n) and computes the value of n+nn+nnn.
      * Example-> input: 5, output = 605 (5+55+555)
@@ -138,7 +144,7 @@ class Solutions {
     return out;
   }
 
-  public String nToOneByOperations(int n) {
+  public static String nToOneByOperations(int n) {
     /*
      * start with an integer n, divide n by 2 if n is even or multiply
      * by 3 and add 1 if n is odd, repeat the process until n = 1.
@@ -155,7 +161,7 @@ class Solutions {
     return out;
   }
 
-  public String numNames(int n) {
+  public static String numNames(int n) {
     /*
      * Input a number from the user and display the sum of digits.
      * Also display the user with each digit of the entered number converted into
@@ -171,7 +177,7 @@ class Solutions {
     return name;
   }
 
-  public String countEvenAndOddElements(int[] n) {
+  public static String countEvenAndOddElements(int[] n) {
     /*
      * Count all even and odd numbers and return them.
      */
@@ -186,7 +192,7 @@ class Solutions {
     return "evens: " + even + "odds: " + odd;
   }
 
-  public String elemSideToSide(int[] n) {
+  public static String elemSideToSide(int[] n) {
     /*
      * Test if an array of integers contains an element 10 next to 10 or an element
      * 20 next to 20, but not both.
