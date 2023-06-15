@@ -49,11 +49,11 @@ public class RockPaperScissors {
 			System.out.println("\u001B[33mYou chose: " + choices[choiceUser] + "\u001B[37m");
 			System.out.println("\u001B[33mComputer chose: " + choices[choiceComputer] + "\u001B[37m");
 
-			boolean winUser = (choiceComputer == 0 && choiceUser == 2) ||
+			boolean winComputer = (choiceComputer == 0 && choiceUser == 2) ||
 					(choiceComputer == 1 && choiceUser == 0) ||
 					(choiceComputer == 2 && choiceUser == 1);
 
-			boolean winComputer = (choiceComputer == 2 && choiceUser == 0) ||
+			boolean winUser = (choiceComputer == 2 && choiceUser == 0) ||
 					(choiceComputer == 0 && choiceUser == 1) ||
 					(choiceComputer == 1 && choiceUser == 2);
 
