@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class NumGuessGame {
   Scanner sc = new Scanner(System.in);
-  Random rd = new Random();
 
   public void start() {
 
@@ -13,7 +12,7 @@ public class NumGuessGame {
     int min = sc.nextInt();
     System.out.println("Enter maximum value");
     int max = sc.nextInt();
-    int num = rd.nextInt(min, max);
+    int num = new Random().nextInt(min, max);
 
     System.out.println("Enter number of chances: ");
     int chances = sc.nextInt();
@@ -29,10 +28,13 @@ public class NumGuessGame {
       if (inp > num) {
         System.out.println("Your guess is greater than the original number");
         continue;
-      }
+      } else
       if (inp < num) {
         System.out.println("Your guess is smaller than the original number");
         continue;
+      }
+      if (i == chances) {
+        System.out.printf("You ran out of chances, better luck next time!\nthe original number was: %d", num);
       }
     }
   }
