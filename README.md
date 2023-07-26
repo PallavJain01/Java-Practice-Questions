@@ -7,5 +7,3 @@
 ### code for all exercises are in: [src/main/java/exercises](https://github.com/PallavJain01/Java-Practice-Questions/tree/master/src/main/java/exercises)
 ##
 #### all java code in markdown format with questions: [src/main/markdown](https://github.com/PallavJain01/Java-Practice-Questions/tree/master/src/main/markdown)
-
-### :warning: work in progress!
