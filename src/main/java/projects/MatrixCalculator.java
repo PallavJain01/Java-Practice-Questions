@@ -160,7 +160,7 @@ class MatrixCalculator {
    * @return minor matrix of specified rows and columns
    */
   public int[][] minor(int[][] matrix, int row, int column) {
-    int[][] minor = new int[matrix.length][matrix[0].length];
+    int[][] minor = new int[matrix.length - 1][matrix[0].length - 1];
     int Index_row = 0;
     for (int i = 0; i < matrix.length; i++) {
       if (i != row) {
